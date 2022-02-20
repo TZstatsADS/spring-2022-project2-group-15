@@ -39,21 +39,20 @@ events_data_processing <- function(filelocation) {
   
   ## Updating Type of event categories
   data_use = data_rm_na_id %>%
-    mutate(`Event Type` = str_trim(`Event Type`)) %>%
-    mutate(Event_Category = ifelse(data_rm_na_id$`Event Name` %like% "COVID", "Covid Testing Site", "")) 
+    mutate(`Event Type` = str_trim(`Event Type`)) 
   
   data_use = data_use %>%
     mutate(Event_Category = case_when(
-      Event_Category != "Covid Testing Site" & `Event Type` %in% c("Athletic Race / Tour", "Stickball", "Athletic", "Health Fair", "Marathon", "Sport - Youth", "Sport - Adult", "Athletic - Charitable") ~ "Sports Event",
-      Event_Category != "Covid Testing Site" & `Event Type` %in% c("Public Program / Exhibitions", "Production Event", "Theater Load in and Load Outs", "Shooting Permit", "Open Culture", "Filming/Photography") ~ "Art Event",
-      Event_Category != "Covid Testing Site" & `Event Type` %in% c("Plaza Event", "Plaza Partner Event", "Parade", "Street Event", "Farmers Market", "Sidewalk Sale", "Block Party", "Rally", "Street Festival", "Single Block Festival", "Weekend Walk") ~ "Street-based Events",
-      Event_Category != "Covid Testing Site" & `Event Type` %in% c("Press Conference", "Stationary Demonstration") ~ "Gathering Events",
-      Event_Category != "Covid Testing Site" & `Event Type` %in% c("Religious Event", "Clean-Up", "Play Streets") ~ "Volunteering Events",
-      Event_Category != "Covid Testing Site" & `Event Type` %in% c("Construction", "Embargo", "Rigging Permit", "Miscellaneous") ~ "Other Events "
-    ))
-  
-  data_use = data_use %>% 
-    mutate(Event_Category = ifelse(is.na(Event_Category), "Special Events", Event_Category))
+      `Event Type` %in% c("Athletic Race / Tour", "Stickball", "Athletic", "Health Fair", "Marathon", "Sport - Youth", "Sport - Adult", "Athletic - Charitable") ~ "Sports Event",
+      `Event Type` %in% c("Public Program / Exhibitions", "Production Event", "Theater Load in and Load Outs", "Shooting Permit", "Open Culture", "Filming/Photography") ~ "Art Event",
+      `Event Type` %in% c("Plaza Event", "Plaza Partner Event", "Parade", "Street Event", "Farmers Market", "Sidewalk Sale", "Block Party", "Rally", "Street Festival", "Single Block Festival", "Weekend Walk") ~ "Street-based Events",
+      `Event Type` %in% c("Press Conference", "Stationary Demonstration") ~ "Gathering Events",
+      `Event Type` %in% c("Religious Event", "Clean-Up", "Play Streets") ~ "Volunteering Events",
+      `Event Type` %in% c("Construction", "Embargo", "Rigging Permit", "Miscellaneous") ~ "Other Events",
+      `Event Type` %in% c("Special Event") ~ "Special Events "
+    )) 
+  data_use = data_use %>%
+    mutate(Event_Category = ifelse(data_use$`Event Name` %like% "COVID", "Covid Testing Site", Event_Category))
   
   ## Event borough stats
   borough_stat <- data_use %>%
@@ -65,6 +64,7 @@ events_data_processing <- function(filelocation) {
 }
 
 events_data = events_data_processing("C:/Users/aakan/Downloads/NYC_Permitted_Event_Information.csv")
+sum(is.na(events_data$Event_Category))
 
 # Covid Data
 
