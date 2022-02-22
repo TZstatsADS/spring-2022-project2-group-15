@@ -35,12 +35,12 @@ ui <- navbarPage("Events NYC", collapsible = TRUE, inverse = TRUE, theme = shiny
                  tabPanel("Event Details",
                           fluidPage(
                             sidebarLayout(
-                              sidebarPanel(width = 2,
+                              sidebarPanel(
                                 fluidRow(
                                   selectInput("category", label = "Select Event Category:",
                                               choices = event_cat),
                                   
-                                  selectInput("borough", label = "Select Borough:",
+                                  selectInput("Borough", label = "Select Borough:",
                                               choices = borough_nyc,selected = "Brooklyn"),
                                   dateRangeInput("daterange",label = "Select Date Range:",
                                                  start = "2019-01-01",

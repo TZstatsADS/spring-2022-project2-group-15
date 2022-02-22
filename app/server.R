@@ -53,7 +53,7 @@ server <- function(input, output) {
   })
   
   output$event_table = renderDataTable(
-    events_data[(events_data$Event_Category == input$category) & (events_data$Event.Borough == input$borough) 
+    events_data[(events_data$Event_Category == input$category) & (events_data$Event.Borough == input$Borough) 
                 & (events_data$Start.Date.Time>=input$daterange[1]&(events_data$End.Date.Time<=input$daterange[2])),c(1,2,3,4,5,6,7,8,10)],
     options = list(
       pageLength=5,
@@ -62,7 +62,7 @@ server <- function(input, output) {
   )
   
   output$covid_table = renderTable(
-    rbind(covid_borough[covid_borough$borough == input$borough,],covid_city)
+    rbind(covid_borough[covid_borough$borough == input$Borough,],covid_city)
     )
 }
 
