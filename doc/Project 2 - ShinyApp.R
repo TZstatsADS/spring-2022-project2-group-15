@@ -80,7 +80,8 @@ server <- function(input, output) {
       scale_shape_tableau() +
       scale_x_date(date_breaks = "1 month", date_labels =  "%b %Y", limits = as.Date(c("2019-01-01", "2022-12-31"))) +
       labs(x = "Date", y = "Number of Events")+
-      theme(axis.text.x=element_text(angle=90, hjust=1)) 
+      theme(axis.text.x=element_text(angle=90, hjust=1), plot.title = element_text(size = 16, face = "bold")) +
+      ggtitle("Timeline of Number of Events [2019 - 2022]")
   })
   
   output$Plot2 <- renderPlot({
@@ -90,7 +91,8 @@ server <- function(input, output) {
       geom_bar() +
       scale_shape_tableau() +
       labs(x = "Year", y = "Number of Events")+
-      theme(axis.text.x=element_text(angle=0, hjust=1)) 
+      theme(axis.text.x=element_text(angle=0, hjust=1), plot.title = element_text(size = 16, face = "bold")) +
+      ggtitle("Year-over-Year Number of Events")
   })
   
   output$Plot3 <- renderPlot({
@@ -102,7 +104,11 @@ server <- function(input, output) {
       scale_shape_tableau() +
       labs(x = "Month", y = "Number of Events")+
       theme(axis.text.x=element_text(angle=0, hjust=1)) +
-      theme(legend.position = c(0.1, 0.8))
+      theme(legend.position = c(0.1, 0.8), plot.title = element_text(size = 16, face = "bold")) +
+      ggtitle("Month-over-month comparison") +
+      scale_x_discrete(limit = c("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"), 
+                       labels = c("Jan","Feb","Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"))
+
   })
   
   output$Plot4 <- renderPlot({
@@ -112,8 +118,8 @@ server <- function(input, output) {
       geom_line(size = 1, color = 'maroon') +
       scale_shape_tableau() +
       labs(x = "Dates", y = "Number of COVID Cases")+
-      theme(axis.text.x=element_text(angle=0, hjust=1)) +
-      theme(legend.position = c(0.1, 0.8))
+      theme(axis.text.x=element_text(angle=0, hjust=1), plot.title = element_text(size = 16, face = "bold")) +
+      ggtitle("NYC Covid cases Trendline")
   })
 }
 
