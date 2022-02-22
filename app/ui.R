@@ -1,6 +1,6 @@
 # Define UI for application that draws a histogram
-ui <- navbarPage("Events NYC", collapsible = TRUE, inverse = TRUE, theme = shinytheme("superhero"),
-                 tabPanel("Summary",
+ui <- navbarPage(strong("Events NYC"), collapsible = TRUE, inverse = TRUE, theme = shinytheme("superhero"),
+                 tabPanel(strong("Summary"),
                           fluidPage(
                             
                             # Application title
@@ -31,11 +31,11 @@ ui <- navbarPage("Events NYC", collapsible = TRUE, inverse = TRUE, theme = shiny
                                 width = 8
                               )
                             ))),
-                 tabPanel("Geo Maps"),
-                 tabPanel("Event Details",
+                 tabPanel(strong("Geo Maps")),
+                 tabPanel(strong("Event Details"),
                           fluidPage(
                             sidebarLayout(
-                              sidebarPanel(
+                              sidebarPanel(width = 2,
                                 fluidRow(
                                   selectInput("category", label = "Select Event Category:",
                                               choices = event_cat),
