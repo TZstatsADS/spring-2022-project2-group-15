@@ -66,6 +66,10 @@ events_data_processing <- function(filelocation) {
 events_data = events_data_processing("C:/Users/aakan/Downloads/NYC_Permitted_Event_Information.csv")
 sum(is.na(events_data$Event_Category))
 
+# dropping used columns
+drop_columns = c("Event Street Side", "Street Closure Type", "Community Board", "Police Precinct")
+events_data = events_data[,!(names(events_data) %in% drop_columns)]
+
 # Covid Data
 
 ## Load the data
@@ -96,7 +100,7 @@ nrow(all_time_covid)
 all_time_covid[['date_of_interest']] <- strptime(all_time_covid[['date_of_interest']],
                                       format = "%Y-%m-%dT%H:%M:%S")
 ## Exporting processed files
-write.table(events_data, "events_data.csv", row.names=FALSE, col.names=TRUE, sep=",")
-write.table(covid_borough, "covid_borough.csv", row.names=FALSE, col.names=TRUE, sep=",")
-write.table(all_time_covid, "all_time_covid.csv", row.names=FALSE, col.names=TRUE, sep=",")
+write.table(events_data, "../data/events_data.csv", row.names=FALSE, col.names=TRUE, sep=",")
+write.table(covid_borough, "../data/covid_borough.csv", row.names=FALSE, col.names=TRUE, sep=",")
+write.table(all_time_covid, "../data/all_time_covid.csv", row.names=FALSE, col.names=TRUE, sep=",")
 
