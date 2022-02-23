@@ -1,34 +1,30 @@
 # Project 2: Shiny App Development
 
 ### [Project Description](doc/project2_desc.md)
+![screenshot](doc/figs/1.png)
+![screenshot](doc/figs/2.png)
+![screenshot](doc/figs/3.png)
+![screenshot](doc/figs/4.png)
 
-![screenshot](doc/figs/map.jpg)
 
-In this second project of GR5243 Applied Data Science, we develop a *Exploratory Data Analysis and Visualization* shiny app on the work of a **NYC government agency/program** of your choice using NYC open data released on the [NYC Open Data By Agency](https://opendata.cityofnewyork.us/data/) website. In particular, many agencies have adjusted their work or rolled out new programs due to COVID, your app should provide ways for a user to explore quantiative measures of how covid has impacted daily life in NYC from different prospectives. See [Project 2 Description](doc/project2_desc.md) for more details.  
+## NYC Events Before and During COVID-19 
 
-The **learning goals** for this project is:
+Shiny app link: https://aakanksha-agarwal.shinyapps.io/Project2ADS/
 
-- business intelligence for data science
-- data cleaning
-- data visualization
-- systems development/design life cycle
-- shiny app/shiny server
-
-*The above general statement about project 2 can be removed once you are finished with your project. It is optional.
-
-## Project Title Lorem ipsum dolor sit amet
 Term: Spring 2022
 
-+ Team #15
-+ **Event NYC**:
++ Team: Group 15
++ **Project title**: NYC Events Before and During COVID-19
++ Team Members:          
 	+ Yixuan Zhang
 	+ Aakanksha Agarwal
 	+ Fucheng Liu
-	
 
-+ **Project summary**: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
++ **Project summary**: COVID-19 has affected people's daily life a lot. Living in the City of New York, we have so many choices to enjoy our leisure time while at the same time we should try to keep ourselves and our community safe. To help our New Yorkers who want not only to enjoy their spare time, but also to protect themselves from the epidemic, we created this webpage to know about all the kinds of events happened in the 5 boroughs in NYC in recent years, and made a comparison between the count of different types of events before and during COVID using map to visualize. What's more, we can receive up-to-date COVID information about the areas where they want to go. In a word, our shiny app is aimed at helping all of us live in New York City safely at the same time making our life enjoyable.  
+
 
 + **Shiny App Link**
++ https://aakanksha-agarwal.shinyapps.io/Project2ADS/
 
 + **Contribution statement**: ([default](doc/a_note_on_contributions.md)) All team members contributed equally in all stages of this project. All team members approve our work presented in this GitHub repository including this contributions statement. 
 
